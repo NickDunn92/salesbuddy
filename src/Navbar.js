@@ -1,4 +1,5 @@
 import React from 'react';
+import './Navbar.css';
 
 const Navbar = ({ name }) => {
   return (
@@ -17,17 +18,17 @@ const Navbar = ({ name }) => {
           <a 
             className="fl w-10 link dim white dib mr3" href="#" title="About"
             >
-              About
+              Leads
             </a>
           <a 
             className="fl w-10 link dim white dib mr3" href="#" title="Store"
             >
-              Store
+              Sales
             </a>
           <a 
             className="fl w-10 link dim white dib" href="#" title="Contact"
             >
-              Contact
+              Call Stats
             </a>
         <div
           className="fl w-10 link white dib"
