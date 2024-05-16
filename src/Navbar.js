@@ -1,6 +1,7 @@
 import React from 'react';
 import { users } from './Users';
- 
+import './Navbar.css';
+
 const Navbar = ({ name, imgUrl }) => {
   return (
     <header 
@@ -11,50 +12,46 @@ const Navbar = ({ name, imgUrl }) => {
         >
         <a 
           className="link dim white dib w-10 pl4" 
-          href="index.js" 
+          href="#index" 
           title="Home"
           >
             Home
-          </a>
+        </a>
         <a 
           className="link dim white dib w-10" 
-          href="Callbacks.js" 
+          href="#Callbacks" 
           title="callbacks"
           >
             Callbacks
-          </a>
+        </a>
         <a 
           className="link dim white dib w-10" 
-          href="Sales.js" 
+          href="#Sales" 
           title="sales"
           >
             Sales
-          </a>
+        </a>
         <a 
           className="link dim white dib" 
-          href="Leads.js" 
+          href="#Leads" 
           title="leads"
           >
             Leads
-          </a>
-          <article 
-            className="mw3"
-            >
-            <div 
-              className="tc"
+        </a>
+        <article 
+          className="mw3 tc"
+          >
+            <img 
+              src={users.imgUrl} 
+              className="br-100 dib" 
+              alt="user profile"
+              />
+            <h4 
+              className="white dib"
               >
-              <img 
-                src={users.imgUrl} 
-                className="br-100 dib" 
-                title="users profile" 
-                />
-              <h4 
-                className="white dib"
-                >
-                  {users.name}
-              </h4>
-            </div>
-          </article>
+                {users.name}
+            </h4>
+        </article>
       </nav>
   </header>
   )

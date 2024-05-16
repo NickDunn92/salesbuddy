@@ -2,7 +2,7 @@ import React from 'react';
 
 const Callbacks = () => {
   return (
-    <div className='ba fl w-25 ma2 mt7 tc br4'>
+    <div className=''>
       <h1>
         Callbacks
       </h1>
