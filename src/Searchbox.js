@@ -4,7 +4,7 @@ const Searchbox = () => {
   return(
     <div>
       <input 
-      className="bg-black-80 mt7 ml4 br3 dim h2"
+      className="bg-black-80 mt3 ml4 br3 dim h2"
       type="search" 
       placeholder="search..." 
       />

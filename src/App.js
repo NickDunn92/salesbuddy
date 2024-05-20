@@ -1,16 +1,24 @@
-import React from "react";
+import { Component } from "react";
 import Navbar from './Navbar';
-import Callstats from './Callstats';
-import Searchbox from "./Searchbox";
+import CallBacks from './CallBacks';
 
-const App = () => {
-  return (
-    <div>
-      <Navbar />
-      <Searchbox />
-      <Callstats />
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <CallBacks />
+      </div>
+    );
+  }
 }
 
 export default App;
