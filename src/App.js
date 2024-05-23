@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Navbar from './Navbar';
+import CardList from './card-list.component';
 
 class App extends Component {
   constructor() {
@@ -7,6 +8,7 @@ class App extends Component {
 
     this.state = {
       callbacks: [],
+      searchField: ''
     };
   }
 
@@ -25,7 +27,22 @@ class App extends Component {
     );
   } 
 
+  onSearchChange = (event) => {
+    const searchField = event.target.value.toLocaleLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
+  }
+
   render() {
+
+    const { callbacks, searchField } = this.state;
+    const { onSearchChange } = this;
+
+    const filteredCallbacks = callbacks.filter((callback) => {
+      return callback.name.toLocaleLowerCase().includes(searchField);
+    });
+
     return (
       <div>
         <div>
@@ -40,27 +57,14 @@ class App extends Component {
               className="bg-black-80 mt3 br3 dim h2"
               type="search" 
               placeholder="search callbacks" 
-              onChange={(event) => {
-                const searchString = event.target.value.toLocaleLowerCase();
-                const filteredCallbacks = this.state.callbacks.filter((callback) => {
-                  return callback.name.toLocaleLowerCase().includes(searchString);
-                });
-
-                this.setState(() => {
-                  return { callbacks: filteredCallbacks };
-                });
-              }}
+              onChange={onSearchChange}
             />
           </div>
           <div>
             {
-              this.state.callbacks.map((callback) => {
+              filteredCallbacks.map((callback) => {
                 return (
-                  <div key={callback.id}>
-                    <h3>
-                      {callback.name}
-                    </h3>
-                  </div>
+                  <CardList />
                 );  
               })
             }
