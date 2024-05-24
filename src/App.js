@@ -64,7 +64,7 @@ class App extends Component {
             {
               filteredCallbacks.map((callback) => {
                 return (
-                  <CardList />
+                  <CardList callbacks={ filteredCallbacks }/>
                 );  
               })
             }

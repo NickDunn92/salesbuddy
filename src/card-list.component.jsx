@@ -2,11 +2,16 @@ import { Component } from 'react';
 
 class CardList extends Component {
   render() {
+
+    const { callbacks } = this.props;
+
     return (
       <div>
-        <h1>
-          I'm a CardList Component
-        </h1>
+        {callbacks.map((callback) => (
+          <h1 key={ callback.id }>
+            {callback.name}
+          </h1>
+        ))}
       </div>
     )
   }
