@@ -1,6 +1,7 @@
 import { Component } from "react";
-import Navbar from './Navbar';
-import CardList from './card-list.component';
+import CardList from './components/card-list/card-list.component';
+import Searchbox from './components/search-box/search-box.component'
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -19,9 +20,6 @@ class App extends Component {
       this.setState(
         () => {
           return { callbacks: users }
-        },
-        () => {
-          console.log(this.state);
         }
       )
     );
@@ -44,32 +42,13 @@ class App extends Component {
     });
 
     return (
-      <div>
-        <div>
-          <Navbar />
-        </div>
-        <div className='ba fl w-90 mt7 ml5 pb5 tc br4'>
-          <h1>
-            CallBacks
-          </h1>
-          <div>
-            <input 
-              className="bg-black-80 mt3 br3 dim h2"
-              type="search" 
-              placeholder="search callbacks" 
-              onChange={onSearchChange}
-            />
-          </div>
-          <div>
-            {
-              filteredCallbacks.map((callback) => {
-                return (
-                  <CardList callbacks={ filteredCallbacks }/>
-                );  
-              })
-            }
-          </div>
-        </div>
+      <div className='App'>
+        <Searchbox
+          onChangeHandler={onSearchChange}
+          placeholder='search callbacks'
+          className={'search-box'}
+        />
+        <CardList callbacks={ filteredCallbacks }/>
       </div>
     );
   }
