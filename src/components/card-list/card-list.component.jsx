@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import Card from '../card/card.component';
+import './card-list.styles.css';
 
 class CardList extends Component {
   render() {
@@ -6,14 +8,15 @@ class CardList extends Component {
     const { callbacks } = this.props;
 
     return (
-      <div>
-        {callbacks.map((callback) => (
-          <h1 key={ callback.id }>
-            {callback.name}
-          </h1>
-        ))}
+      <div className='card-list'>
+        {callbacks.map((callback) => {
+
+          return (
+            <Card callback={callback} />
+          );
+        })}
       </div>
-    )
+    );
   }
 }
 
