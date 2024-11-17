@@ -1,58 +1,45 @@
-import { Component } from "react";
+import { useState, useEffect } from "react";
 import CardList from './components/card-list/card-list.component';
 import Searchbox from './components/search-box/search-box.component'
 import './App.css';
 
-class App extends Component {
-  constructor() {
-    super();
+const App = () => {
+  const [searchField, setSearchField] = useState('');
+  const [callbacks, setCallbacks] = useState([]);
+  const [filteredCallbacks, setFilteredCallbacks] = useState(callbacks);
 
-    this.state = {
-      callbacks: [],
-      searchField: ''
-    };
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
-    .then((users) => 
-      this.setState(
-        () => {
-          return { callbacks: users }
-        }
-      )
-    );
-  } 
+    .then((users) => setCallbacks(users));
+  }, []);
 
-  onSearchChange = (event) => {
-    const searchField = event.target.value.toLocaleLowerCase();
-    this.setState(() => {
-      return { searchField };
-    });
-  }
-
-  render() {
-
-    const { callbacks, searchField } = this.state;
-    const { onSearchChange } = this;
-
-    const filteredCallbacks = callbacks.filter((callback) => {
+  useEffect(() => {
+    const newFilteredCallbacks = callbacks.filter((callback) => {
       return callback.name.toLocaleLowerCase().includes(searchField);
     });
 
-    return (
-      <div className='App'>
-        <h1 className="logo">Salesbuddy</h1>
-        <Searchbox
-          onChangeHandler={onSearchChange}
-          placeholder='search callbacks'
-          className={'search-box'}
-        />
-        <CardList callbacks={ filteredCallbacks }/>
-      </div>
-    );
+    setFilteredCallbacks(newFilteredCallbacks);
+  }, [callbacks, searchField]);
+
+  const onSearchChange = (event) => {
+    const searchFieldString = event.target.value.toLocaleLowerCase();
+    setSearchField(searchFieldString);
   }
-}
+
+  return (
+    <div className='App'>
+      <h1 className="logo">Salesbuddy</h1>
+
+      <Searchbox
+        onChangeHandler={onSearchChange}
+        placeholder='search callbacks'
+        className={'search-box'}
+      />
+
+      <CardList callbacks={filteredCallbacks}/>
+    </div>
+  );
+};
 
 export default App;
