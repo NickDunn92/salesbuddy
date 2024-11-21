@@ -11,7 +11,7 @@ const App = () => {
       <Route path='/' element={<Navigation />} >
         <Route index element={<Home />} />
         <Route path='calls' element={<Calls />} />
-        <Route path='callsbacks' element={<Callbacks />} />
+        <Route path='callbacks' element={<Callbacks />} />
       </Route>
     </Routes>
   );

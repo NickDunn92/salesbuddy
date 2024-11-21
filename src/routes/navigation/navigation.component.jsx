@@ -25,6 +25,11 @@ const Navigation = () => {
             Leads
           </Link>
         </div>
+        <div>
+          <Link className="nav-link" to="/sales">
+            Sales
+          </Link>
+        </div>
       </div>
       <Outlet />
     </Fragment>
