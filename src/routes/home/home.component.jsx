@@ -1,15 +1,14 @@
 import { Outlet } from 'react-router-dom';
- 
-import Callbacks from '../../components/callbacks/callbacks.component';
+
+import './home.styles.css';
 
 const Home = () => {
 
 
   return (
-    <div className='App'>
-      <h1 className="logo">Salesbuddy</h1>
+    <div className='home'>
       <Outlet />
-      <Callbacks />
+      <h1>Welcome to SalesBuddy!</h1>
     </div>
   );
 };

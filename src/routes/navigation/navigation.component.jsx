@@ -7,23 +7,30 @@ const Navigation = () => {
   return (
     <Fragment>
       <div className="navigation">
-        <Link className="home" to="/">
-          Home
-        </Link>
         <div className="links-container">
-          <Link className="nav-link" to="/calls">
-            Calls
-          </Link>
-        </div>
-        <div>
-          <Link className="nav-link" to="/callbacks">
-            Callbacks
-          </Link>
-        </div>
-        <div>
-          <Link className="nav-link" to="/leads">
-            Leads
-          </Link>
+          <div className="link-box">
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
+          </div>
+          <div className="link-box">
+            <Link className="nav-link" to="/calls">
+              Calls
+            </Link>
+          </div>
+          <div className="link-box">
+            <Link className="nav-link" to="/callbacks">
+              Callbacks
+            </Link>
+          </div>
+          <div className="link-box">
+            <Link className="nav-link" to="/leads">
+              Leads
+            </Link>
+          </div>
+          <div className="logo">
+            <h3 className="logo">SalesBuddy</h3>
+          </div>
         </div>
       </div>
       <Outlet />

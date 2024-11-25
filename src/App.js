@@ -3,7 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Navigation from './routes/navigation/navigation.component';
 import Home from "./routes/home/home.component";
 import Calls from "./components/calls/calls.components";
-import Callbacks from "./components/callbacks/callbacks.component"
+import Callbacks from "./components/callbacks/callbacks.component";
+import Leads from './components/leads/leads.component';
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
       <Route path='/' element={<Navigation />} >
         <Route index element={<Home />} />
         <Route path='calls' element={<Calls />} />
-        <Route path='callsbacks' element={<Callbacks />} />
+        <Route path='callbacks' element={<Callbacks />} />
+        <Route path='leads' element={<Leads />} />
       </Route>
     </Routes>
   );

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Searchbox from '../../components/search-box/search-box.component';
 import CardList from '../../components/card-list/card-list.component';
 
+import './callbacks.styles.css';
+
 const Callbacks = () => {
   const [searchField, setSearchField] = useState('');
   const [callbacks, setCallbacks] = useState([]);
@@ -28,7 +30,7 @@ const Callbacks = () => {
   };
 
   return (
-    <div>
+    <div className="callbacks">
       <h1>Callbacks</h1>
 
       <Searchbox
