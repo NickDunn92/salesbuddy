@@ -32,6 +32,11 @@ const Navigation = () => {
             <h3 className="logo">SalesBuddy</h3>
           </div>
         </div>
+        <div>
+          <Link className="nav-link" to="/sales">
+            Sales
+          </Link>
+        </div>
       </div>
       <Outlet />
     </Fragment>
