@@ -14,7 +14,6 @@ const App = () => {
         <Route path='calls' element={<Calls />} />
         <Route path='callbacks' element={<Callbacks />} />
         <Route path='leads' element={<Leads />} />
-        <Route path='callbacks' element={<Callbacks />} />
       </Route>
     </Routes>
   );
