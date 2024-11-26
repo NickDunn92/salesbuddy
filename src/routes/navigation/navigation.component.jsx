@@ -28,14 +28,19 @@ const Navigation = () => {
               Leads
             </Link>
           </div>
+          <div className="link-box">
+            <Link className="nav-link" to="/kpi">
+              KPI's
+            </Link>
+          </div>
+          <div>
+            <Link className="nav-link" to="/sales">
+              Sales
+            </Link>
+          </div>
           <div className="logo">
             <h3 className="logo">SalesBuddy</h3>
           </div>
-        </div>
-        <div>
-          <Link className="nav-link" to="/sales">
-            Sales
-          </Link>
         </div>
       </div>
       <Outlet />
