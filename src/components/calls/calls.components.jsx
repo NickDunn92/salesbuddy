@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 import Searchbox from '../../components/search-box/search-box.component';
-import Card from "../card/card.component";
 
 import './calls.styles.css';
 
@@ -48,8 +47,6 @@ const Calls = () => {
           )
         })}
       </div>
-
-      <Card calls={filteredCalls} />
     </div>
   );
 };
