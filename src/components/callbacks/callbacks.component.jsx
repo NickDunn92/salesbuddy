@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Searchbox from '../../components/search-box/search-box.component';
-import CardList from '../../components/card-list/card-list.component';
+import Card from "../card/card.component";
 
 import './callbacks.styles.css';
 
@@ -39,7 +39,17 @@ const Callbacks = () => {
         className={'search-box'}
       />
 
-      <CardList callbacks={filteredCallbacks}/>
+      <div className="card-list">
+        {filteredCallbacks.map((callback) => {
+          return (
+            <div key={callback.id}>
+              <h1>{callback.name}</h1>
+            </div>
+          )
+        })}
+      </div>
+
+      <Card callbacks={filteredCallbacks} />
     </div>
   );
 };

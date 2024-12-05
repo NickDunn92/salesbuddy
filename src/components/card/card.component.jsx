@@ -1,7 +1,6 @@
 import './card.styles.css';
 
-const Card = ({ callback }) => {
-  const { id, name } = callback;
+const Card = ({ id, name }) => {
 
   return (
     <div className='card-container'>
